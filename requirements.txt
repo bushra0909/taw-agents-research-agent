@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+python-multipart
+reportlab
+langchain
+langchain-ollama
+langchain-tavily
+tavily-python
