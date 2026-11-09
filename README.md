@@ -4,6 +4,10 @@ An AI-powered Company Research Agent that searches the web, generates AI-assiste
 
 **🎥 Project Demonstration:** [Watch the Loom Demo](https://www.loom.com/share/b0e2104f401449138a77972246192060)
 
+## 🚀 Live Deployment
+
+**Live Application:** https://taw-agents-research-agent-rn7y6kj23-bushra-e0e6.vercel.app/
+
 ## Problem
 
 Consultants and business professionals often spend considerable time gathering company information from multiple websites and organizing it into research documents. This project automates that initial research process.
