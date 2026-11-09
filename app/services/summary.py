@@ -14,11 +14,13 @@ def summarize_company(company_name: str, search_results: list):
 
     if provider == "groq":
         llm = ChatGroq(
-            model="openai/gpt-oss-20b",
-            temperature=0,
-            max_tokens=800,
-            api_key=os.getenv("GROQ_API_KEY")
-        )
+        model="openai/gpt-oss-20b",
+        temperature=0,
+       max_tokens=1500,
+       reasoning_effort="low",
+       api_key=os.getenv("GROQ_API_KEY")
+)
+        
     else:
         llm = ChatOllama(
             model=os.getenv("OLLAMA_MODEL", "llama3.2:1b"),
