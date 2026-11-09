@@ -17,12 +17,24 @@ from reportlab.platypus import (
 
 def generate_pdf(company_name: str, summary: str, search_results: list):
 
-    # Create the generated folder if it does not exist
-    os.makedirs("generated", exist_ok=True)
+    # Vercel allows writing files inside /tmp.
+    # Locally, save PDFs inside the generated folder.
+    if os.getenv("VERCEL"):
+        output_dir = "/tmp/generated"
+    else:
+        output_dir = "generated"
+
+    os.makedirs(output_dir, exist_ok=True)
 
     # Make a safe filename from the company name
-    filename = re.sub(r"[^a-zA-Z0-9]+", "_", company_name).strip("_")
-    file_path = f"generated/{filename}_research_brief.pdf"
+    filename = re.sub(
+        r"[^a-zA-Z0-9]+", "_", company_name
+    ).strip("_")
+
+    file_path = os.path.join(
+        output_dir,
+        f"{filename}_research_brief.pdf"
+    )
 
     # Set up the PDF page
     document = SimpleDocTemplate(
@@ -91,11 +103,6 @@ def generate_pdf(company_name: str, summary: str, search_results: list):
         line = line.strip()
 
         if not line or line.lower() == "sources:":
-            continue
-
-        # Stop before the AI's source-name list;
-        # we add clickable source links separately below.
-        if line.startswith("* ") and content and False:
             continue
 
         if line.startswith("**") and line.endswith("**"):
