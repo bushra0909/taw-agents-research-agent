@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered company research and intelligence platform.">
+    <title>ResearchIQ | Company Intelligence</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span>Research<span class="brand-highlight">IQ</span></span>
+        </a>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            AI Research Assistant
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-badge">
+                <span>✦</span> AI-POWERED COMPANY INTELLIGENCE
+            </div>
+
+            <h1>
+                Research smarter.<br>
+                <span>Discover more.</span>
+            </h1>
+
+            <p class="hero-description">
+                Turn company information from across the web into
+                clear, structured research briefs — powered by AI.
+            </p>
+
+            <section class="research-card">
+
+                <label for="companyName">
+                    What company would you like to research?
+                </label>
+
+                <div class="input-wrapper">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="companyName"
+                        placeholder="Enter a company name, e.g. Microsoft"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <button id="researchBtn" type="button">
+                    <span id="buttonText">Generate Research Brief</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <p class="input-hint">
+                    Enter a company name to get started.
+                </p>
+
+                <div id="loadingMessage" class="loading-message hidden">
+                    <span class="loader"></span>
+                    Researching company information. This may take a moment...
+                </div>
+
+                <div id="errorMessage" class="error-message hidden"></div>
+
+                <div id="successMessage" class="success-message hidden">
+
+                    <div class="success-icon">✓</div>
+
+                    <div>
+                        <strong>Your research brief is ready!</strong>
+                        <p>Your PDF has been generated successfully.</p>
+                    </div>
+
+                    <a
+                        id="downloadLink"
+                        href="#"
+                        download
+                        class="download-btn"
+                    >
+                        Download PDF ↓
+                    </a>
+
+                </div>
+
+            </section>
+
+            <div class="trust-note">
+                <span>✓</span> Web research
+                <span>✓</span> AI-generated summary
+                <span>✓</span> Downloadable PDF
+            </div>
+
+        </section>
+
+
+        <section class="features">
+
+            <div class="section-heading">
+                <span>THE PROCESS</span>
+                <h2>From company name to research brief</h2>
+                <p>Three simple steps. One useful report.</p>
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <div class="feature-icon blue">⌕</div>
+                    <span class="step-number">STEP 01</span>
+                    <h3>Web Research</h3>
+                    <p>
+                        Collect relevant company information and sources
+                        from the web using Tavily.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon purple">✦</div>
+                    <span class="step-number">STEP 02</span>
+                    <h3>AI Analysis</h3>
+                    <p>
+                        Use a local AI model to organize information
+                        into a concise company summary.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon green">▤</div>
+                    <span class="step-number">STEP 03</span>
+                    <h3>PDF Report</h3>
+                    <p>
+                        Generate a structured research brief with
+                        clickable research sources.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <a href="/" class="footer-brand">ResearchIQ</a>
+
+        <p>AI-powered company research assistant</p>
+
+        <span>Built with FastAPI · LangChain · Ollama · Tavily</span>
+    </footer>
+
+
+    <script src="/static/js/app.js?v=2" defer></script>
+
+</body>
+</html>
